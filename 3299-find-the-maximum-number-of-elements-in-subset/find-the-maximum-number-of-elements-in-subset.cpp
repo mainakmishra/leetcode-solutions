@@ -2,7 +2,7 @@ class Solution {
 public:
     int maximumLength(vector<int>& nums) {
         int n=nums.size();
-        map <int,int> mp;
+        unordered_map <int,int> mp;
         int i,cnt=0,flag=0;
         for(i=0;i<n;i++){
             ++mp[nums[i]];
