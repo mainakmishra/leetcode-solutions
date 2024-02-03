@@ -13,13 +13,15 @@ public:
             q.pop();
             if(word==endWord)return len;
             for(int i=0;i<word.length();i++){
+                char start=word[i];
                 for(char j='a';j<='z';j++){
-                    string ns=word.substr(0,i)+j+word.substr(i+1);
-                    if(st.find(ns)!=st.end()){
-                        q.push({ns,len+1});
-                        st.erase(ns);
+                    word[i]=j;
+                    if(st.find(word)!=st.end()){
+                        q.push({word,len+1});
+                        st.erase(word);
                     }
                 }
+                word[i]=start;
             }
         }
         return 0;
