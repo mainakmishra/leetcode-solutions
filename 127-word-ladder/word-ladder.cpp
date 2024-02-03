@@ -6,6 +6,7 @@ public:
         for(auto &i:wordList)st.insert(i);
         queue <pair<string,int>> q;
         q.push({beginWord,1});
+        st.erase(beginWord);
         while(!q.empty()){
             string word=q.front().first;
             int len=q.front().second;
