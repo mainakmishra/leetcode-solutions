@@ -1,5 +1,8 @@
 class Solution {
 public:
+    Solution(){
+        ios::sync_with_stdio(false); std::cin.tie(nullptr);
+    }
     int maxSubarrayLength(vector<int>& a, int k) {
         unordered_map <int,int> mp;
         int n=a.size();
