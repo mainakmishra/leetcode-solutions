@@ -1,5 +1,6 @@
 class Solution {
 public:
+
     int minimumSubarrayLength(vector<int>& a, int k) {
         int right=0;
         int n=a.size();
