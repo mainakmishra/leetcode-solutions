@@ -1,6 +1,9 @@
 class Solution {
 public:
-
+    Solution(){
+        ios::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+    }
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
         int n=gas.size();
         int sumgas=0,sumcost=0;
