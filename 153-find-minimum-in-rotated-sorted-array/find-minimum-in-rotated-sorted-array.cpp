@@ -2,6 +2,7 @@ class Solution {
 public:
     int findMin(vector<int>& a){
         int n=a.size();
+        if(n==1)return a[0];
         int left=0,right=n-1,ans=0,mid=0;
         while(left<=right){
             mid=(left+right)/2;
