@@ -1,14 +1,18 @@
 class Solution {
 public:
+    Solution(){
+        ios::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+    }
     int shortestPathBinaryMatrix(vector<vector<int>>& grid) {
         if(grid[0][0]!=0)return -1;
         int n=grid.size(),m=grid[0].size();
-        priority_queue < pair <int, pair <int,int>> , vector <pair < int, pair <int,int> > >,greater <pair < int,pair <int,int>> > > pq;
+        queue <pair < int, pair<int,int>>> pq;
         vector<vector<int>> dist(n,vector<int>(m,1e9));
         dist[0][0]=1;
         pq.push({1,{0,0}});
         while(!pq.empty()){
-            auto it=pq.top();
+            auto it=pq.front();
             int d=it.first;
             int row=it.second.first;
             int col=it.second.second;
