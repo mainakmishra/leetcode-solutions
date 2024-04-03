@@ -3,6 +3,10 @@ using namespace std;
 
 class Solution {
 public:
+    Solution(){
+        ios::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+    }
     // Main function to check if the word exists on the board
     bool exist(vector<vector<char>>& board, string word) {
         int n = board.size(); // Number of rows in the board
