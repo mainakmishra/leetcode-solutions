@@ -1,5 +1,9 @@
 class Solution {
 public:
+    Solution(){
+        ios::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+    }
     int minimumEffortPath(vector<vector<int>>& grid) {
         int n=grid.size(),m=grid[0].size();
         priority_queue < pair <int, pair <int,int>> , vector <pair < int, pair <int,int> > >,greater <pair < int,pair <int,int>> > > pq;
