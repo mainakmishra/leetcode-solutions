@@ -16,10 +16,9 @@ public:
             int row=it.second.first;
             int col=it.second.second;
             pq.pop();
-            int x[]={-1,1,0,0};
-            int y[]={0,0,-1,1};
+            int x[]={-1,0,1,0};
             for(int i=0;i<4;i++){
-                int dx=row+x[i],dy=col+y[i];
+                int dx=row+x[i],dy=col+x[(i+1)%4];
                 if(dx>=0 and dx<n and dy>=0 and dy<m){
                     int x=max(abs(grid[dx][dy]-grid[row][col]),d);
                     if(x<dist[dx][dy]){
