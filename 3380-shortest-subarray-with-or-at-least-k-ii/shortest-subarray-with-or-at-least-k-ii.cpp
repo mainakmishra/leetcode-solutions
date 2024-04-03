@@ -1,5 +1,10 @@
 class Solution {
 public:
+    Solution(){
+        ios::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+    }
+    
     int calc(vector <int> &bits){
         int sum=0;
         for(int i=0;i<32;i++){
