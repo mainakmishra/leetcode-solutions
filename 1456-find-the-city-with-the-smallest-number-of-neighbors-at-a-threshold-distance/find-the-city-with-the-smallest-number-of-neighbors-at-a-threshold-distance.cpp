@@ -1,5 +1,6 @@
 class Solution {
 public:
+
     int findTheCity(int n, vector<vector<int>>& edges, int k) {
         vector<vector<pair<int,int>>> adj(n);
         for(auto &i:edges){
