@@ -1,5 +1,9 @@
 class Solution {
 public:
+    Solution(){
+        ios::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+    }
     int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
         vector <vector<pair<int,int>>> adj(n);
         for(auto &i:flights){
