@@ -1,6 +1,9 @@
 class Solution {
 public:
-
+    Solution(){
+        ios::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+    }
     int findTheCity(int n, vector<vector<int>>& edges, int k) {
         vector<vector<pair<int,int>>> adj(n);
         for(auto &i:edges){
