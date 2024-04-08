@@ -6,7 +6,7 @@ public:
     }
     int countStudents(vector<int>& students, vector<int>& sandwiches) {
         queue <int> s1,s2;
-        map <int,int> mp1,mp2;
+        int mp1[2],mp2[2];
         int count=students.size();
         for(auto &i:students){
             ++mp1[i];
