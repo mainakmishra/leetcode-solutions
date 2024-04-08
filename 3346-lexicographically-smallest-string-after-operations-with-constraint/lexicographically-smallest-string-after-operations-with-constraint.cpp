@@ -1,40 +1,18 @@
 class Solution {
-public:
-    Solution(){
-        ios::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-    }
-    int dist(char a,char b){
-        if(a>b)swap(a,b);
-        int ans=min(b-a,a-'a'+'z'-b+1);
-        return ans;
-    }
+public:    
     string getSmallestString(string s, int k) {
-        if(k==0)return s;
-        vector <char> alpha;
-        for(char i='a';i<='z';i++)alpha.push_back(i);
-        string t="";
-        for(int i=0;i<s.length();i++){
-            int j=(s[i]-97+1)%26;
-            int maxi=0;
-            if(k==0 or s[i]=='a'){
-                t+=s[i];
-                continue;
-            }
-            char flag='z';
-            while(alpha[j]!=s[i]){
-                int d=dist(s[i],alpha[j]);
-                if(d<=k){
-                    if(alpha[j]<=flag){
-                        maxi=d;
-                        flag=alpha[j];
-                    }
-                }
-                j=(j+1)%26;
-            }
-            k-=maxi;
-            t+=flag;
+        if(k == 0) return s;
+        int diff=0;
+        for(int i=0;i<s.size();i++){
+            diff = min('z'-s[i]+1,s[i]-'a');
+            if(k>=diff){
+                s[i] = 'a';
+                k -= diff;
+            }else if(k < diff){
+                s[i] = s[i]-k;
+                k=0;
+            }           
         }
-        return t;
+        return s;
     }
 };
