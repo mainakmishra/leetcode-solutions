@@ -1,6 +1,9 @@
 class Solution {
 public:
-
+    Solution(){
+        ios::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+    }
     int dist(char a,char b){
         if(a>b)swap(a,b);
         int ans=min(b-a,a-'a'+'z'-b+1);
