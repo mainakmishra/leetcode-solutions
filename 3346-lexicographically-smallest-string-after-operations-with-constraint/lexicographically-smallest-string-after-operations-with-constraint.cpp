@@ -1,5 +1,6 @@
 class Solution {
 public:
+
     int dist(char a,char b){
         if(a>b)swap(a,b);
         int ans=min(b-a,a-'a'+'z'-b+1);
