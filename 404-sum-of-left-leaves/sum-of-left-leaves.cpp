@@ -15,7 +15,7 @@ public:
         int ans=0;
         if(!root)return 0;
         if(root->left){
-            if(!root->left->left and !root->left->right){
+            if(!root->left->right and !root->left->left){
                 ans+=root->left->val;
             }
             else ans+=sumOfLeftLeaves(root->left);
