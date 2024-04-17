@@ -11,6 +11,10 @@
  */
 class Solution {
 public:
+    Solution(){
+        ios::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+    }
     void smallest(TreeNode* root, string start, vector <string> &v){
         if(!root)return;
         start=start+(char)('a'+root->val);
