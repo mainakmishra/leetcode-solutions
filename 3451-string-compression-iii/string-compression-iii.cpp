@@ -5,18 +5,12 @@ public:
         string ans="";
         int count=1;
         for(int i=0;i<n;i++){
-            if(i==n-1){
+            if(i==n-1 or word[i]!=word[i+1] or count>=9){
                 ans+=to_string(count);
                 ans+=word[i];
-            }
-            else if(word[i]==word[i+1] and count<9){
-                count++;
-            }
-            else{
-                ans+=to_string(count);
                 count=1;
-                ans+=word[i];
             }
+            else count++;
         }
         return ans;
     }
