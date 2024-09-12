@@ -5,10 +5,9 @@ public:
         for(auto &i:allowed)++mp[i];
         int count=0;
         for(auto &i:words){
-            int flag=0;
+            int flag=1;
             for(auto &j:i){
-                if(mp[j]!=0)flag=1;
-                else{
+                if(mp[j]==0){
                     flag=0;
                     break;
                 }
