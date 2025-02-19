@@ -8,14 +8,7 @@ public:
             return;
         }
         for(char i='a';i<='c';i++){
-            if(idx){
-                if(i!=s[idx-1]){
-                    s+=i;
-                    f(s,idx+1);
-                    s.pop_back();
-                }
-            }
-            else{
+            if((idx && i!=s[idx-1])||!idx){
                 s+=i;
                 f(s,idx+1);
                 s.pop_back();
