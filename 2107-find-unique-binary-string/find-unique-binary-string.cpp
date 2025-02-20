@@ -1,11 +1,33 @@
+
+#include <vector>
+#include <string>
+#include <unordered_set>
+
+using namespace std;
+
 class Solution {
 public:
     string findDifferentBinaryString(vector<string>& nums) {
-        int N = nums.size();
-        string ans = "";
-        for(int i = 0; i < N; i++){
-            ans += (nums[i][i] == '0') ? '1' : '0';
+        int n = nums.size();
+        unordered_set<string> numSet(nums.begin(), nums.end());
+        return generateBinaryStrings("", numSet, n);
+    }
+
+private:
+    string generateBinaryStrings(string current, unordered_set<string>& numSet, int n) {
+        if (current.length() == n) {
+            if (numSet.find(current) == numSet.end()) {
+                return current;
+            }
+            return "";
         }
-        return ans;
+
+        for (char c : {'0', '1'}) {
+            string binaryString = generateBinaryStrings(current + c, numSet, n);
+            if (!binaryString.empty()) {
+                return binaryString;
+            }
+        }
+        return "";
     }
 };
